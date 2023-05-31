@@ -49,3 +49,4 @@
 ## 运行注意事项：
 
 需要启动ZooKeeper服务器与Master后，才能够开始运行Region和Client
+ZooKeeper使用默认配置即可，端口需要用2181
