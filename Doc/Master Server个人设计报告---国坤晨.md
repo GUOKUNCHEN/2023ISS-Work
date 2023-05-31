@@ -122,6 +122,10 @@ classDiagram
 
     - 对于client：
 
+      `<client>[1]tablename`:表示这是客户端的查询表格请求，Master将会依据tableInfo中的映射关系将对应的Ip以`<master>[1]ip tablename`的格式发送给客户端。
+
+      `<client>[2]tablename`:表示这是客户端的create table请求，Master将会根据aliveServer中所有的Region进行负载均衡选择后，将负载最小的节点的Ip以`<master>[1]ip tablename`的形式发送给客户端。
+
     - 对于region：
 
       `<region>[1]`:表示从节点启动，完成zookeeper的注册后，再将本节点存储的表名通过socket都发给主节点，格式是<region>[1]tbname tbname tbname。
