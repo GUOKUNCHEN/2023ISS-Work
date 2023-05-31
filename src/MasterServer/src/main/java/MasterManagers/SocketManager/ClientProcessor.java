@@ -5,8 +5,8 @@ import MasterManagers.TableManger;
 import java.net.Socket;
 
 /**
- * 1.等待客户端的表格查询信息<client>[1]name,返回<master>[1]ip name
- * 2.等待客户端的表格创建信息<client>[2]name,做负载均衡处理后返回<master>[2]ip name
+ * 1.如果消息为<client>[1]tablename，表示该请求为客户端的table查询信息,返回<master>[1]ip(对应的Region) tablename
+ * 2.如果消息为<client>[2]name，则在做负载均衡处理后返回<master>[2]ip name
  */
 public class ClientProcessor {
 
